@@ -11,8 +11,7 @@ function sayItLoud() {
 
 sayItLoud();
 ```
-
-
+- Scope
 
 2. **Okay... so why does the code below throw an error?**
 ```javascript
@@ -24,8 +23,7 @@ function sayItLoud() {
 
 let greeting = "Hello"
 ```
-
-
+- `let` and scope
 
 3. **Mmhmmm... so what about this😰. What does the following code log? Why?**
 ```javascript
@@ -35,7 +33,7 @@ function sayItLoud() {
 }
 var greeting = "Hello"
 ```
-
+- How variables are hoisted -- undefined!!!
 
 
 4. **Why does the following block of code throw an error? Fix this without changing the variable declaration keyword.**
@@ -50,7 +48,7 @@ if (isMaya🧘🏽‍♀️) {
 
 console.log(status);
 ```
-
+- `status` is not defined, reference error. Fixes? console.log(maya)? without changing which keyword? let to var.
 
 
 5. **Why does the following block of code NOT throw an error?**
@@ -65,11 +63,13 @@ if (isLaishaOnTime) {
 
 console.log(status);
 ```
-
+- no error because var has function scope, and its presently just in a block so it is accessible to the console.log
 
 
 6. **In JavaScript, we can declare variables with `var`, `let`, and `const`. What are the differences between each? Be sure to comment on how each declaration impacts the _scope_, _reassignment_, and _hoisting_ of variables.**
 
+- Variables declared with let and const have a block scope while var varibales are initialized in the lexical scope. var and let variables can be reassigned but variables declared with const cannot, although their values can be mutated. All variables are hoisted, but only those with keyword var are initialized as undefined.
+- See 2.4
 
 
 7. **Where does the following code throw an error? What type of error? Why?**
@@ -81,6 +81,7 @@ console.log(a);
 **tags:** #variableDeclaration
 **key:** "the variable `b` is not defined."
 
+- b is not defined/reference error
 
 
 8. **What is the value of `b` after this code runs? Explain why this is the case.**
@@ -95,7 +96,7 @@ console.log(b);
 **tags:** #mutability
 **key:** "`b` points to the integer `1`, a primitive data type", "reassigning `a` has no effect on `b`" 
 
-
+- value of b is 1 because it binded to the value of a in declaration and because of it points to a primitive data type it cannot be mutated by the reassignment of a.
 
 9. **What does the following code log? Explain why?**
 ```javascript
@@ -107,7 +108,7 @@ console.log(b.goals);
 **tags:** #mutability
 **key:** "`b` points to the same object referenced by `a`"
 
-
+- this logs `goals: "Cielo"` because objects are a mutable data type and resignining b to the value of a points to the same space in a memory.
 
 10. **Where does the following code throw an error? What type of error? Why?**
 ```javascript
@@ -118,7 +119,7 @@ console.log(bffs);
 ```
 **tags**: #variableDeclaration #mutability #primitives
 **key:** "variables declared with `const` cannot be reassigned"
-
+- This code logs `"Enmanuel Laisha"` because `const` variables cannot be reassigned.
 
 
 11. **Wait, why doesn't the code below throw an error?! 🧐 What does this demonstrate?**
@@ -130,7 +131,7 @@ console.log(bffs);
 ```
 **tags:** #mutability #objects
 **key:** "`bffs` was not reassigned", "JavaScript objects are mutable"
-
+- `cosnt` here is not being reassigned because its still the same object as they can be mutated (push here) without creating another copy
 
 
 12. **What does the following code log? Why?**
@@ -145,6 +146,8 @@ console.log(say);
 ```
 **tags**: #functionExecution #functionArguments
 **key:** "function was not invoked"
+
+- not proper syntax to invoke function, missing `()`
 
 
 
