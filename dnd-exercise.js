@@ -22,7 +22,7 @@ let topThreeRollsAdded = (rolledNumsArr) => {
 
 //gen hitpoints from constitution stat, subtract 10, divide by 2, and round down -- return number
 let hitpointGen = (statValue) => {
-  return Math.floor((statValue - 10) / 2);
+  return 10 + Math.floor((statValue - 10) / 2);
 };
 
 //combine steps to calculate stats
